@@ -2,11 +2,9 @@
 <html lang="zh-CN">
 <meta charset="UTF-8">
 <meta name="Author" content="">
-<meta name="Keywords" content="黑人邀请您微信通... 黑人抬棺 专业团队">
-<meta name="Description" content="黑人邀请您微信通... 黑人抬棺 专业团队">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
-        <title>黑人邀请您微信通...</title>
+        <title>午夜凶铃</title>
 <style>
     html,
     body {
@@ -37,26 +35,71 @@
     #jntm_music {
         display: none;
     }
+
+    
+    .col-center-block {
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    .main{
+    text-align: center;
+    background-color: #fff;
+    border-radius: 20px;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.words{
+    font-size: 40px;
+	letter-spacing: 10px;
+	position: absolute;
+	top:50%;
+	left: 30%;
+}
 </style>
-<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 </head>
 
 <body>
-    <div id="container">
-        <audio id="wx_music" src="static/mp3/call.mp3" controls loop autoplay></audio>
+
+    <div class="row" id = "btnLayer">
+        <div class="main"> 
+                <img id="startBtn" src="static/jpg/avatar.png" class="main" style="width: 100%; height: 100%"></img>
+                <p class="words" id = "imgtext">点击头像加好友</p>
+        </div>
+    </div>
+
+    <div id="container" style="display: none">
+        <audio id="wx_music"  loop ></audio>
     </div>
     <div id="jntm"></div>
     <div id="hr">
     </div>
-    <audio id="mp32" controls loop src="static/mp3/astronomia.mp3">
+    <audio id="mp32"  loop src="static/mp3/astronomia.mp3">
         您的浏览器不支持 audio 元素。
     </audio>
     <script>
+        var changeColor = function(element) {
+            var colors = ["#ccff99", "#ccff99", "#ff00ff", "#00cc66", "#ff3300", "#000099", "#ccff33", "#0000ff", "#ff99cc", "#00ff00", "#0000cc", "#ffcc99", "#800000", "#00ffff", "#663300",
+        "#000000"]
+            setInterval(function() { element.style.color =  colors[Math.round(Math.random() * colors.length)]}, 100);
+            
+        }
+
         var ele = document.getElementById("wx_music");
-        wx.ready(function () {
-            ele.src = "static/mp3/call.mp3"
+        ele.src = "static/mp3/call.mp3"
+        var startBtn = document.getElementById("startBtn");
+        var btnLayer = document.getElementById("btnLayer");
+        changeColor(document.getElementById("imgtext"));
+        startBtn.onclick = function() {
+            btnLayer.style.display = "none";
+            document.getElementById("container").style = "block"
             ele.play();
-        });
+        }
         var mp32 = document.getElementById("mp32");
         document.getElementById("container").onclick = function () {
             ele.pause();

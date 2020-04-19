@@ -1,10 +1,10 @@
 {
   "name": "blackmakescall",
   "version": "1.0.0",
-  "description": "meta name=\"Author\" content=\"零零后®（北京）科技有限公司\"",
+  "description": "meta name=\"Author\" content=\"Heekale",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "concurrently \"http-server -a 0.0.0.0 -p 1234\" \"open http://0.0.0.0:1234/build\""
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/zhenzihui/blackmakescall.github.io#readme",
   "devDependencies": {
+    "concurrently": "^5.1.0",
     "http-server": "^0.12.1"
   }
 }
