@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <meta charset="UTF-8">
-<meta name="Author" content="零零后（北京）科技有限公司">
+<meta name="Author" content="">
 <meta name="Keywords" content="黑人邀请您微信通... 黑人抬棺 专业团队">
 <meta name="Description" content="黑人邀请您微信通... 黑人抬棺 专业团队">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -38,6 +38,7 @@
         display: none;
     }
 </style>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 </head>
 
 <body>
@@ -52,12 +53,11 @@
     </audio>
     <script>
         var ele = document.getElementById("wx_music");
+        wx.ready(function () {
+            ele.src = "static/mp3/call.mp3"
+            ele.play();
+        });
         var mp32 = document.getElementById("mp32");
-        ele.addEventListener('canplay', function () {
-            setTimeout(function () {
-                ele.play();
-            }, 500);
-        })
         document.getElementById("container").onclick = function () {
             ele.pause();
             this.removeChild(ele);
