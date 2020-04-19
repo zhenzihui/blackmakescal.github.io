@@ -1,0 +1,22 @@
+{
+  "name": "blackmakescall",
+  "version": "1.0.0",
+  "description": "meta name=\"Author\" content=\"零零后®（北京）科技有限公司\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhenzihui/blackmakescall.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhenzihui/blackmakescall.github.io/issues"
+  },
+  "homepage": "https://github.com/zhenzihui/blackmakescall.github.io#readme",
+  "devDependencies": {
+    "http-server": "^0.12.1"
+  }
+}
